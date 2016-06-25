@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.love.lixinxin.openchain.R;
 import com.love.lixinxin.openchain.ui.fragment.MyFragment;
+import com.love.lixinxin.openchain.ui.fragment.NewsFragment;
 import com.love.lixinxin.openchain.widget.MyFragmentTabHost;
 
 public class MainActivity extends AppCompatActivity implements TabHost.OnTabChangeListener, View.OnClickListener {
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
     private MyFragmentTabHost mTabHost;
     private View mAddBt;
 
-    private Class[] fragments = {MyFragment.class, MyFragment.class, null, MyFragment.class, MyFragment.class};
+    private Class[] fragments = {NewsFragment.class, MyFragment.class, null, MyFragment.class, MyFragment.class};
 
 
     private String[] text = {"综合", "动弹", "", "发现", "我的"};
