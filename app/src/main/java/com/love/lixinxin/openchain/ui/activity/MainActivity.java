@@ -3,13 +3,17 @@ package com.love.lixinxin.openchain.ui.activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.PopupWindow;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.love.lixinxin.openchain.R;
+import com.love.lixinxin.openchain.ui.fragment.DiscoverFragment;
 import com.love.lixinxin.openchain.ui.fragment.MyFragment;
 import com.love.lixinxin.openchain.ui.fragment.NewsFragment;
 import com.love.lixinxin.openchain.widget.MyFragmentTabHost;
@@ -18,8 +22,7 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
 
     private MyFragmentTabHost mTabHost;
     private View mAddBt;
-
-    private Class[] fragments = {NewsFragment.class, MyFragment.class, null, MyFragment.class, MyFragment.class};
+    private Class[] fragments = {NewsFragment.class, MyFragment.class, null, DiscoverFragment.class, MyFragment.class};
 
 
     private String[] text = {"综合", "动弹", "", "发现", "我的"};
@@ -32,20 +35,28 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
             R.drawable.tab_icon_me
     };
 
+    private PopupWindow popWnd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initView();
+        initData();
         initTabs();
         initEvent();
 
     }
 
+
     private void initView() {
         mAddBt = findViewById(R.id.quick_option_iv);
         mTabHost = (MyFragmentTabHost) findViewById(android.R.id.tabhost);
+    }
+
+    private void initData() {
+        popWnd = new PopupWindow(this);
     }
 
     private void initEvent() {
@@ -104,8 +115,32 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.quick_option_iv:
-                Toast.makeText(this, "点击的是中间的啊", Toast.LENGTH_SHORT).show();
+                showPopWnd();
                 break;
         }
     }
+
+
+    private void showPopWnd() {
+        View contentView;
+        contentView = View.inflate(this, R.layout.pop_view, null);
+
+
+        contentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popWnd.dismiss();
+            }
+        });
+
+        popWnd.setContentView(contentView);
+        popWnd.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        popWnd.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
+
+        popWnd.setOutsideTouchable(true);
+        popWnd.setFocusable(false);
+        popWnd.showAtLocation(mAddBt, Gravity.BOTTOM, 0, 0);
+    }
+
+
 }

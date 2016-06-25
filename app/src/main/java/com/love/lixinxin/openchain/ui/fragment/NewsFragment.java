@@ -26,6 +26,7 @@ public class NewsFragment extends Fragment {
 
     private List<Fragment> fragments;
     private List<String> titles;
+    
 
     private BolgFragment bolgFragment1;
     private BolgFragment bolgFragment2;
@@ -35,10 +36,18 @@ public class NewsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bolgFragment1 = new BolgFragment();
-        bolgFragment2 = new BolgFragment();
-        bolgFragment3 = new BolgFragment();
-        bolgFragment4 = new BolgFragment();
+
+        titles = new ArrayList<>();
+        titles.add("资讯");
+        titles.add("博客");
+        titles.add("问答");
+        titles.add("活动");
+        
+        
+        bolgFragment1 = BolgFragment.newInstance(titles.get(0));
+        bolgFragment2 = BolgFragment.newInstance(titles.get(1));
+        bolgFragment3 = BolgFragment.newInstance(titles.get(2));
+        bolgFragment4 = BolgFragment.newInstance(titles.get(3));
 
         fragments = new ArrayList<>();
         fragments.add(bolgFragment1);
@@ -46,11 +55,7 @@ public class NewsFragment extends Fragment {
         fragments.add(bolgFragment3);
         fragments.add(bolgFragment4);
 
-        titles = new ArrayList<>();
-        titles.add("精选");
-        titles.add("体育");
-        titles.add("巴萨");
-        titles.add("购物");
+        
 
         fragmentAdapter = new FragmentAdapter(getChildFragmentManager(), fragments, titles);
        
