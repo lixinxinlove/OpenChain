@@ -26,12 +26,12 @@ public class NewsFragment extends Fragment {
 
     private List<Fragment> fragments;
     private List<String> titles;
-    
+
 
     private BolgFragment bolgFragment1;
     private BolgFragment bolgFragment2;
-    private BolgFragment bolgFragment3;
-    private BolgFragment bolgFragment4;
+    private OneFragment oneFragment;
+    private TweFragment tweFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,23 +42,22 @@ public class NewsFragment extends Fragment {
         titles.add("博客");
         titles.add("问答");
         titles.add("活动");
-        
-        
+
+
         bolgFragment1 = BolgFragment.newInstance(titles.get(0));
         bolgFragment2 = BolgFragment.newInstance(titles.get(1));
-        bolgFragment3 = BolgFragment.newInstance(titles.get(2));
-        bolgFragment4 = BolgFragment.newInstance(titles.get(3));
+        oneFragment = OneFragment.newInstance(titles.get(2));
+        tweFragment = TweFragment.newInstance(titles.get(3));
 
         fragments = new ArrayList<>();
         fragments.add(bolgFragment1);
         fragments.add(bolgFragment2);
-        fragments.add(bolgFragment3);
-        fragments.add(bolgFragment4);
+        fragments.add(oneFragment);
+        fragments.add(tweFragment);
 
-        
 
         fragmentAdapter = new FragmentAdapter(getChildFragmentManager(), fragments, titles);
-       
+
     }
 
     @Override
@@ -82,11 +81,10 @@ public class NewsFragment extends Fragment {
     }
 
     private void initData() {
-        
+
         for (int i = 0; i < titles.size(); i++) {
             tabLayout.addTab(tabLayout.newTab().setText(titles.get(i)));
         }
-
         viewPager.setAdapter(fragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }

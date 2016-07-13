@@ -64,10 +64,7 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
         mAddBt.setOnClickListener(this);
     }
 
-
     private void initTabs() {
-
-
         // 初始化底部FragmentTabHost
         mTabHost.setup(this, getSupportFragmentManager(), R.id.fl);
 
