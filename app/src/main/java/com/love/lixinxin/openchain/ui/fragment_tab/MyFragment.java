@@ -1,4 +1,4 @@
-package com.love.lixinxin.openchain.ui.fragment;
+package com.love.lixinxin.openchain.ui.fragment_tab;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -19,6 +19,9 @@ import com.love.lixinxin.openchain.R;
 
 import java.io.FileNotFoundException;
 
+/**
+ * 我的
+ */
 public class MyFragment extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM = "title";

@@ -1,4 +1,4 @@
-package com.love.lixinxin.openchain.ui.fragment;
+package com.love.lixinxin.openchain.ui.fragment_tab;
 
 import android.content.Context;
 import android.net.Uri;
@@ -12,12 +12,7 @@ import com.love.lixinxin.openchain.R;
 import com.google.android.gms.plus.PlusOneButton;
 
 /**
- * A fragment with a Google +1 button.
- * Activities that contain this fragment must implement the
- * {@link PlusOneFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link PlusOneFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * 动弹
  */
 public class PlusOneFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match

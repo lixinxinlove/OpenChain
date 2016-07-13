@@ -1,4 +1,4 @@
-package com.love.lixinxin.openchain.ui.fragment;
+package com.love.lixinxin.openchain.ui.fragment_tab;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -10,12 +10,15 @@ import android.view.ViewGroup;
 
 import com.love.lixinxin.openchain.R;
 import com.love.lixinxin.openchain.ui.adapter.FragmentAdapter;
+import com.love.lixinxin.openchain.ui.fragment.BolgFragment;
+import com.love.lixinxin.openchain.ui.fragment.OneFragment;
+import com.love.lixinxin.openchain.ui.fragment.TweFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ *综合
  */
 public class NewsFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.love.lixinxin.openchain.ui.fragment;
+package com.love.lixinxin.openchain.ui.fragment_tab;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.love.lixinxin.openchain.R;
 
+/**
+ * 发现
+ */
 public class DiscoverFragment extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "title";

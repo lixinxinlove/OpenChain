@@ -10,12 +10,11 @@ import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.love.lixinxin.openchain.R;
-import com.love.lixinxin.openchain.ui.fragment.DiscoverFragment;
-import com.love.lixinxin.openchain.ui.fragment.MyFragment;
-import com.love.lixinxin.openchain.ui.fragment.NewsFragment;
+import com.love.lixinxin.openchain.ui.fragment_tab.DiscoverFragment;
+import com.love.lixinxin.openchain.ui.fragment_tab.MyFragment;
+import com.love.lixinxin.openchain.ui.fragment_tab.NewsFragment;
 import com.love.lixinxin.openchain.widget.MyFragmentTabHost;
 
 public class MainActivity extends AppCompatActivity implements TabHost.OnTabChangeListener, View.OnClickListener {
