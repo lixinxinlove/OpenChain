@@ -12,6 +12,7 @@ import com.love.lixinxin.openchain.R;
 import com.love.lixinxin.openchain.ui.adapter.FragmentAdapter;
 import com.love.lixinxin.openchain.ui.fragment.BolgFragment;
 import com.love.lixinxin.openchain.ui.fragment.OneFragment;
+import com.love.lixinxin.openchain.ui.fragment.ThreeFragment;
 import com.love.lixinxin.openchain.ui.fragment.TweFragment;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class NewsFragment extends Fragment {
 
 
     private BolgFragment bolgFragment1;
-    private BolgFragment bolgFragment2;
+    private ThreeFragment threeFragment;
     private OneFragment oneFragment;
     private TweFragment tweFragment;
 
@@ -48,13 +49,13 @@ public class NewsFragment extends Fragment {
 
 
         bolgFragment1 = BolgFragment.newInstance(titles.get(0));
-        bolgFragment2 = BolgFragment.newInstance(titles.get(1));
+        threeFragment = ThreeFragment.newInstance(titles.get(1));
         oneFragment = OneFragment.newInstance(titles.get(2));
         tweFragment = TweFragment.newInstance(titles.get(3));
 
         fragments = new ArrayList<>();
         fragments.add(bolgFragment1);
-        fragments.add(bolgFragment2);
+        fragments.add(threeFragment);
         fragments.add(oneFragment);
         fragments.add(tweFragment);
 
