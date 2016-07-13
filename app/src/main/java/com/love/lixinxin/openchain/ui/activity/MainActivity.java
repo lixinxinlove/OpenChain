@@ -96,15 +96,15 @@ public class MainActivity extends AppCompatActivity implements TabHost.OnTabChan
     @Override
     public void onTabChanged(String tabId) {
         if (tabId.equals("0")) {
-            Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
+            //   Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
         } else if (tabId.equals("1")) {
-            Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
+            //   Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
         } else if (tabId.equals("2")) {
-            Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
         } else if (tabId.equals("3")) {
-            Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
+            //   Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
         } else if (tabId.equals("4")) {
-            Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(this, "点击的是" + tabId, Toast.LENGTH_SHORT).show();
         }
     }
 

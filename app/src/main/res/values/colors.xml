@@ -6,4 +6,6 @@
     <color name="green">#0b9a27</color>
     <color name="gray">#999999</color>
     <color name="white">#ffffff</color>
+
+    <color name="y">#ffff00</color>
 </resources>
