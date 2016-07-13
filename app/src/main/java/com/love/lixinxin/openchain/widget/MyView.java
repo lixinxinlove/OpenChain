@@ -19,7 +19,7 @@ public class MyView extends View {
     private int mWidth, mHeight;
     private int r = 50;   //圆的半径
 
-    ValueAnimator valueAnimator ;
+    ValueAnimator valueAnimator;
 
 
     public MyView(Context context) {
@@ -85,7 +85,6 @@ public class MyView extends View {
         canvas.drawCircle(mWidth / 2, mHeight / 2, r, mPaint);
     }
 
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
@@ -95,9 +94,7 @@ public class MyView extends View {
             case MotionEvent.ACTION_MOVE:
                 break;
             case MotionEvent.ACTION_UP:
-                valueAnimator.removeAllUpdateListeners();
-                r=50;
-                invalidate();
+                upAnimator();
                 break;
         }
         return true;
@@ -105,7 +102,7 @@ public class MyView extends View {
 
 
     private void downAnimator() {
-        valueAnimator =ValueAnimator.ofInt(50, 30);
+        valueAnimator = ValueAnimator.ofInt(50, 30);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -113,12 +110,23 @@ public class MyView extends View {
                 invalidate();
             }
         });
-        valueAnimator.setDuration(100);
+        valueAnimator.setDuration(200);
         valueAnimator.start();
     }
 
 
-
+    private void upAnimator() {
+        valueAnimator = ValueAnimator.ofInt(30, 50);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                r = (int) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+        valueAnimator.setDuration(200);
+        valueAnimator.start();
+    }
 
 
 }
